@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
@@ -31,10 +29,10 @@ app.get('/api/notes', (req, res) => {
 
 app.post('/api/notes', (req, res) => {
   const newNote = req.body;
+  newNote.id = uuidv4(); // Assigning a unique id using UUID
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if (err) throw err;
     const notes = JSON.parse(data);
-    newNote.id = notes.length + 1; // Assigning a unique id
     notes.push(newNote);
     fs.writeFile('./db/db.json', JSON.stringify(notes), (err) => {
       if (err) throw err;
@@ -44,7 +42,7 @@ app.post('/api/notes', (req, res) => {
 });
 
 app.delete('/api/notes/:id', (req, res) => {
-  const idToDelete = parseInt(req.params.id);
+  const idToDelete = req.params.id;
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if (err) throw err;
     let notes = JSON.parse(data);
