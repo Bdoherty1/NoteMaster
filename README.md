@@ -34,6 +34,10 @@ Update employee roles for effective organizational planning.
 ## Installation
 No installation required. Simply access the deployed application.
 
+
+![Example Image](imgs/Screenshot%202024-03-12%20at%207.05.21%20PM.png)
+![Example Image](imgs/Screenshot%202024-03-12%20at%207.05.36%20PM.png)
+
 ## Technologies Used
 - HTML
 - CSS
@@ -41,8 +45,7 @@ No installation required. Simply access the deployed application.
 - Node.js
 - Express
 
-## Credits
-This application was created by Bdoherty1.
-
+## Future Dev
+In the client-side code (client.js), functions like saveNote and clearForm are implemented to handle button actions. The saveNote function sends a POST request to the server to save a new note, while clearForm resets input fields. On the server side (notes.js), routes are defined for retrieving and adding notes, with data being stored in a JSON file. Despite these efforts, the buttons aren't functioning correctly, suggesting a potential disconnect
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
